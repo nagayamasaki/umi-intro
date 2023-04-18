@@ -1,0 +1,16 @@
+@startuml ユースケース図
+left to right direction
+' actor 販売部
+rectangle 販売部{
+actor 注文商品確認担当
+actor 入荷登録担当
+}
+rectangle 販売管理システム{
+ usecase 注文商品の確認
+ usecase 商品の入荷登録
+}
+
+注文商品確認担当 --> 注文商品の確認
+入荷登録担当 --> 商品の入荷登録
+
+@enduml
