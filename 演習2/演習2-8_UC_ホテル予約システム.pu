@@ -1,0 +1,20 @@
+@startuml ユースケース図
+left to right direction
+
+actor 利用者
+actor ホテル従業員
+actor ホテル管理者
+
+rectangle ホテル宿泊予約システム{
+ usecase 空室状況閲覧
+'  usecase 宿泊予約
+ usecase (<u>宿泊予約</u>\n拡張点\nキャンペーン期間) as input
+'予約の時にアカウント登録（ログイン）をする
+ usecase キャンペーン価格
+ usecase 空室状況入力
+ usecase 予約の集計
+ usecase ログイン
+ usecase 会員登録
+}
+
+@enduml

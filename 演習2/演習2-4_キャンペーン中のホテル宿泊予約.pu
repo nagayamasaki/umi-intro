@@ -8,6 +8,6 @@ actor 利用者
  }
  利用者 --> input
 '  ログイン .> input : << include >>
- キャンペーン価格 .> input : << include >>
+ キャンペーン価格 <. input : << extend >>
  
 @enduml

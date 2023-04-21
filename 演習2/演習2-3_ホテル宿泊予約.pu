@@ -6,5 +6,5 @@ actor 利用者
     usecase 宿泊予約
  }
  利用者 --> 宿泊予約
- ログイン .> 宿泊予約 : << include >>
+ ログイン <. 宿泊予約 : << include >>
 @enduml
