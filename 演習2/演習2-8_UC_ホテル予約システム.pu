@@ -3,18 +3,26 @@ left to right direction
 
 actor 利用者
 actor ホテル従業員
-actor ホテル管理者
+actor ホテルの管理者
 
 rectangle ホテル宿泊予約システム{
  usecase 空室状況閲覧
-'  usecase 宿泊予約
- usecase (<u>宿泊予約</u>\n拡張点\nキャンペーン期間) as input
-'予約の時にアカウント登録（ログイン）をする
+ usecase ログイン
+ usecase 会員登録
+
  usecase キャンペーン価格
  usecase 空室状況入力
  usecase 予約の集計
- usecase ログイン
- usecase 会員登録
+ usecase (<u>宿泊予約</u>\n拡張点\nキャンペーン期間) as input
+'予約の時にアカウント登録（ログイン）をする
 }
 
+利用者 --> 空室状況閲覧
+利用者 --> input
+キャンペーン価格 <. input : << extend >>
+ログイン .> input: << include >>
+ログイン <. ホテル従業員
+ログイン <. ホテルの管理者
+空室状況入力 <-- ホテル従業員
+予約の集計 <-- ホテルの管理者
 @enduml
