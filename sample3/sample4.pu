@@ -1,0 +1,14 @@
+@startuml  
+
+'継承(特化)  親クラスと子クラス
+class 社員{}
+class 技術社員{}
+class 営業社員{}
+
+社員 <|-- 技術社員
+社員 <|-- 営業社員
+
+hide 社員 circle
+hide 技術社員 circle
+hide 営業社員 circle
+@enduml

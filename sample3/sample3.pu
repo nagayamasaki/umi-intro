@@ -2,12 +2,18 @@
 left to right direction
 skinparam ClassAttributeIconSize 0
 
+'片方向の場合矢印
+'両方向の場合は矢印付けない
+
 '関連名
 '多重度
 class 会社{}
 class 社員{}
 ' 会社 --> 社員:雇う >
 会社"1"--"*" 社員
+'ロール（役割）をかける
+'おすすめはしない
+会社"雇用者"--"従業員" 社員
 
 
 '集約
@@ -19,7 +25,7 @@ end note
 'neteはleftでもrightでもどちらでも良い
 
 
-'複合
+'複合（composition）
 パソコン"1" *-- ハードディスク
 note right of パソコン
 ハードディスクがないと成り立ちません。
@@ -27,10 +33,13 @@ end note
 
 
 '依存関係
+'一時的
 注文 <.. 注文管理
 note top of 注文管理
 注文管理が注文のメソッドもしくは属性を呼び出している
 end note
+
+
 
 hide 会社 circle
 hide 社員 circle
