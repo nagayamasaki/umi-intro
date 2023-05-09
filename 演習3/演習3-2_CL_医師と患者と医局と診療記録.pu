@@ -1,3 +1,8 @@
 @startuml  
+class 医師{}
+class 患者{}
+'class 患者の診察記録{}
+class 医局{}
+
 
 @enduml
