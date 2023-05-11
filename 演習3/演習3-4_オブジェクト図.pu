@@ -1,3 +1,13 @@
 @startuml  
+left to right direction
+object "<u>車種:車 </u>" as car {
+ボディ
+タイヤ
+}
+object "<u>タイヤ:タイヤ数 </u>" as tire {
+個数 = 4
+}
+
+car -- tire
 
 @enduml

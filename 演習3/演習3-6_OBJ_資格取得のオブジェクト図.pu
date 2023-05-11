@@ -1,3 +1,20 @@
 @startuml  
+object "<u>名称:資格 </u>" as qua1 {
+情報処理安全確保支援士
+LinuC試験Level1 
+}
+object "<u>社員:社員1 </u>" as Examinee1 {
+高橋洋平
+情報処理安全確保支援士 
+LinuC試験Level1
+}
+object "<u>社員:社員2 </u>" as Examinee2 {
+樋口正之
+情報処理安全確保支援士
+}
+
+qua1 -ri- Examinee1
+qua1 -- Examinee2
+
 
 @enduml
