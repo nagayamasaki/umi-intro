@@ -1,3 +1,18 @@
 @startuml  
+hide footbox 
+skinparam style strictuml
+participant "<u>controller:データ更新コントローラ</u>" as controller
+participant "<u>hotel:ホテル</u>" as hotel
+' participant "<u>:</u>" as reserve
+
+activate controller
+    controller -> hotel : 予約操作
+    activate hotel
+        create  "<u>予約:</u>" as entity
+        hotel -> entity :1.1.1生成() <<create>>
+         hotel -> hotel : 予約登録()
+        activate hotel
+    deactivate hotel
+deactivate controller
 
 @enduml
