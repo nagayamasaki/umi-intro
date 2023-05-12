@@ -2,6 +2,7 @@
 title ログイン認証
 hide footbox 
 'hideしなかったら下にもつく
+skinparam style strictuml
 Actor "<u>:登録会員</u>" as member
 participant "<u>:ログイン画面</u>" as boundary <<boundary>>
 participant "<u>:ログインコントローラ</u>" as control <<control>>
