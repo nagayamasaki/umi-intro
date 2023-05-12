@@ -1,3 +1,37 @@
 @startuml  
+hide footbox 
+autonumber
+skinparam style strictuml
+Actor "<u>:受注係</u>" as clerk
+participant "<u>:注文登録画面</u>" as register <<boundary>>
+participant "<u>:商品</u>" as merchandise <<entity>>
+
+
+mainframe sd 注文登録画面
+activate clerk
+    clerk -> register : 
+    activate register
+        register -> merchandise : 商品情報取得
+
+        activate merchandise
+            merchandise -->> register : 商品情報
+        deactivate merchandise
+
+        register -> register : 商品情報表示
+        
+        activate register
+        deactivate register
+        
+    deactivate register
+
+    clerk -> register : 
+    activate register
+        create "<u>:注文</u>" as order <<entity>>
+        register -->> order : <<作成>>
+        activate order
+
+        deactivate order
+    deactivate register
+deactivate clerk
 
 @enduml
