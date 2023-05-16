@@ -1,31 +1,46 @@
 @startuml  
 
-object "<u>テレビ:商品 </u>" as merchandise1 {
-商品名
-型式
+object "<u>テレビ:商品 </u>" as television1 {
+型式 = V12345
 }
 
-object "<u>冷蔵庫:商品 </u>" as merchandise2 {
-商品名
-型式
+object "<u>テレビ:商品 </u>" as television2 {
+型式 = V12345
+}
+
+object "<u>冷蔵庫:商品 </u>" as refrigerator1 {
+型式 = R8765
+}
+
+object "<u>冷蔵庫:商品 </u>" as refrigerator2 {
+型式 = R8765
 }
 
 
-' object "<u>:注文 </u>" as  {
-' 注文日
-' 数量
-' }
-
-object "<u>高田利恵:顧客 </u>" as customer {
+object "<u>:注文</u>" as order {
 注文日
+数量
+}
+
+object "<u>高橋洋平:顧客 </u>" as customer {
+注文日=11月21日
 住所
 }
 
-object "<u>高橋洋平:重要顧客 </u>" as importantcustomer {
-注文日
+object "<u>高田利恵:顧客 </u>" as customer2 {
+注文日=12月23日
+住所
 }
 
-merchandise1 -ri- importantcustomer
-merchandise2 -up- importantcustomer
-merchandise2 -- customer
+object "<u>:重要顧客 </u>" as importantcustomer {
+}
+
+' customer -- television1
+' customer -- television2
+' customer -- refrigerator1
+' importantcustomer -- customer
+' customer2 -- refrigerator2
+
+order -ri- television1
+
 @enduml
