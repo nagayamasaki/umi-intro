@@ -6,6 +6,7 @@ skinparam style strictuml
 Actor "<u>:会員</u>" as member
 participant ":商品検索画面" as search <<boundary>>
 participant ":商品検索コントローラ" as control  <<control>>
+
 activate member
     member -> search:注文情報を確認
     activate search
