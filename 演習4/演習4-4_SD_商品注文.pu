@@ -9,9 +9,9 @@ participant "<u>:商品</u>" as merchandise <<entity>>
 
 mainframe sd 注文登録画面
 activate clerk
-    clerk -> register : 
+    clerk -> register : 商品情報確認()
     activate register
-        register -> merchandise : 商品情報取得
+        register -> merchandise : 商品情報取得()
 
         activate merchandise
             merchandise -->> register : 商品情報
@@ -24,7 +24,7 @@ activate clerk
         
     deactivate register
 
-    clerk -> register : 
+    clerk -> register : 商品登録
     activate register
         create "<u>:注文</u>" as order <<entity>>
         register -->> order : <<作成>>
