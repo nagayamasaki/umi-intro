@@ -7,7 +7,6 @@ participant "<u>:注文登録画面</u>" as register <<boundary>>
 participant "<u>:商品</u>" as merchandise <<entity>>
 
 
-mainframe sd 注文登録画面
 activate clerk
     clerk -> register : 商品情報確認()
     activate register
