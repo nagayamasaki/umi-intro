@@ -1,0 +1,27 @@
+@startuml  
+hide footbox
+autonumber 
+skinparam style strictuml
+
+actor "<u>:客</u>" as customer
+participant "<u>:料金装置</u>" as price
+participant "<u>:ボタン</u>" as button
+participant "<u>:ベンダー装置</u>" as vendor
+
+activate customer
+    customer -> price : 料金を入れる
+    activate price
+    price -> button : 料金投入信号
+        activate button
+        button -->> customer
+        customer -> button : ボタンを押す
+        button -> vendor : 選んだドリンクの信号
+            activate vendor
+                vendor -> vendor : ドリンクを出す
+                vendor -->> customer : ドリンク
+            deactivate vendor
+        deactivate button
+    deactivate price
+    
+deactivate customer
+@enduml
