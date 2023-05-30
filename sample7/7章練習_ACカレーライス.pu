@@ -1,5 +1,5 @@
 @startuml  7章練習_ACカレーライス
-
+title カレーライス
 start
 :米を洗う;
 fork
