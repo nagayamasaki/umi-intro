@@ -1,0 +1,16 @@
+@startuml  
+left to right direction
+
+state 電源SW_ON {
+    state 右旋回 : 右モータ OFF\n左モータ ON
+    state 左旋回 : 右モータ ON\n左モータ OFF
+}
+
+電源SW_OFF --> 電源SW_ON
+
+右旋回 --> 左旋回 : 光センサーが\n明るいと判断
+左旋回 --> 右旋回 : 光センサーが\n暗いと判断
+
+電源SW_OFF <-- 電源SW_ON
+
+@enduml
